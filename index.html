@@ -107,7 +107,16 @@
         if(e.shiftKey && this.checked) { // if event and shift key is held down and they are checking the box. 
         // Then we can go ahead and do what we please.
         checkboxes.forEach(checkbox => { // loop over each checkbox
+            console.log(checkbox);
+            // below checks that either the first or last checkboxes are ticked. This captures both ways.
+            if (checkbox === this || checkbox === lastChecked) { 
+                inBetween = !inBetween; // Makes it NOT inBetween, which makes it true as inBetween is set to false.
+                console.log('Starting inBetween');
+            }
 
+            if (inBetween) { // This loops through checkboxes until it gets to last one
+                checkbox.checked = true; // If inBetween is checked it makes it true, which will in turn be false, and turn it off.
+            }
         });
         }
 
