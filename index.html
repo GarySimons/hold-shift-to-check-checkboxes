@@ -96,6 +96,13 @@
   </div>
 
 <script>
+    const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]'); // selects all inboxes
+
+    function handleCheck(e) {
+        console.log(e);
+    }
+    
+    checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck)); // this creates a listen on all boxes for a click
 </script>
 </body>
 </html>
